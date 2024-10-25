@@ -1,0 +1,25 @@
+/* Menyembunyikan pop-up secara default */
+.popup {
+    display: none; /* Pop-up tidak terlihat secara default */
+    position: fixed; /* Posisi tetap di layar */
+    top: 50%; /* Pusat vertikal */
+    left: 50%; /* Pusat horizontal */
+    transform: translate(-50%, -50%); /* Pindahkan ke tengah */
+    background-color: white; /* Warna latar belakang putih */
+    border: 1px solid #ccc; /* Garis batas abu-abu */
+    padding: 20px; /* Ruang dalam pop-up */
+    border-radius: 8px; /* Sudut melengkung */
+    z-index: 1000; /* Pastikan pop-up di atas elemen lain */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+.overlay {
+    display: none; /* Overlay tidak terlihat secara default */
+    position: fixed; /* Posisi tetap di layar */
+    top: 0; /* Menutupi bagian atas */
+    left: 0; /* Menutupi bagian kiri */
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam transparan */
+    z-index: 999; /* Pastikan overlay di atas elemen lain */
+}
