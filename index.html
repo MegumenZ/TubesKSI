@@ -126,7 +126,9 @@
             dropdownMenu.classList.toggle('active', !isActive);
             dropdownMenu.setAttribute('aria-hidden', isActive);
         }
-
+        function navigateTo(page) {
+          window.location.href = page;
+        }
       
     // Calculate the width of the longest item
     const items = document.querySelectorAll('.horizontal-scroll-item');
