@@ -287,10 +287,8 @@
         linkElement.href = "Gizianak.html";
     } else if (imt >= 23 && imt < 29.9) {
         linkElement.href = "GizigaIdeal.html";
-    } else {
-        linkElement.href = "GizigaIdeal.html";
-    }
-
+    } 
+        }
     const resultText = `Indeks Massa Tubuh (IMT) Anda adalah ${imt.toFixed(2)}. Kategori: ${kategori}.`;
     document.getElementById("resultText").innerText = resultText;
     document.getElementById("resultSection").style.display = "block";
