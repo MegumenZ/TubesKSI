@@ -9,26 +9,23 @@
 
 </head>
   <!-- Header -->
-    <div>
-      <header>
-          <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-          <div class="profile-icon">
-              <img src="aset/logo.png" alt="Profile Icon" style="width: 170%; height: 170%; border-radius: 100%;">
-          </div>
-      </header>
-    </div>
+    <div class="atas">
+      <div class="atas">
+          <header>
+              <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+              <div class="profile-icon">
+                  <img src="aset/logo.png" alt="Profile Icon" style="width: 170%; height: 170%; border-radius: 100%;">
+              </div>
+          </header>
+        </div>
 
     <div class="dropdown-menu" id="dropdownMenu">
-      <a href="fiturbalita.html">
-        <button>Cek Gizi Balita</button>
-      </a>
-      <a href="Perhitungan Berat Badan ibu hamil.html">  
-        <button>Cek Gizi Ibu Hamil</button>
-      </a>
-      <a href="#">
-        <button>Menu Beranda</button>
-      </a>
+      <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Balita</button>
+      <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
+      <button onclick="navigateTo('#')">Menu Beranda</button>
+        </div>
   </div>
+</div>
 
 
     
@@ -124,9 +121,11 @@
 
   <script>
     function toggleMenu() {
-        const menu = document.getElementById('dropdownMenu');
-        menu.classList.toggle('active');
-    }
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const isActive = dropdownMenu.classList.contains('active');
+            dropdownMenu.classList.toggle('active', !isActive);
+            dropdownMenu.setAttribute('aria-hidden', isActive);
+        }
 
       
     // Calculate the width of the longest item
