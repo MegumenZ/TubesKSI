@@ -38,23 +38,44 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
             z-index: 1000;
-            box-shadow: 0 px 2px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
         .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Gaya untuk setiap garis pada ikon menu */
+.menu-icon div {
+    width: 19px;  /* Lebar garis */
+    height: 3.5px;  /* Tinggi garis */
+    background-color: #000; /* Warna garis hitam */
+    border-radius: px;     /* Membuat sudut garis melengkung */
+}
+
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 25px;
-            height: 20px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        .menu-icon div {
+
+        .logo img {
             width: 100%;
-            height: 3px;
-            background-color: #633B48;
+            height: 100%;
+            object-fit: cover;
         }
-        .logo { width: 60px; }
         h1 {
             text-align: center;
             padding-top: 120px;
@@ -128,10 +149,11 @@
             width: 80px;
             padding-bottom: -500px;
         }
+        
         /* Dropdown Menu Styles */
         .dropdown-menu {
             position: fixed;
-            top: 60px; /* Adjusted to match header height */
+            top: 60px; 
             left: -100%;
             width: 75%;
             max-width: 300px;
@@ -144,7 +166,7 @@
             align-items: center;
             gap: 15px;
             transition: left 0.3s ease;
-            z-index: 999; /* Below header */
+            z-index: 999; 
         }
         .dropdown-menu.active {
             left: 0;
@@ -176,12 +198,14 @@
                 <div></div>
                 <div></div>
             </div>
-            <img class="logo" src="aset/logo.png" alt="Logo">
+            <div class="logo">
+            <img class="logo" src="aset/logo.png" alt="Logo" style="width: 170%; height: 170%";>
+            </div>
         </header>
-         <div class="dropdown-menu" id="dropdownMenu" aria-hidden="true">
-            <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Balita</button>
-            <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
-            <button onclick="navigateTo('index.html')">Menu Beranda</button>
+        <div class="dropdown-menu" id="dropdownMenu" aria-hidden="true">
+            <button onclick="navigateTo('cek-gizi-balita.html')">Cek Gizi Balita</button>
+            <button onclick="navigateTo('cek-gizi-ibu-hamil.html')">Cek Gizi Ibu Hamil</button>
+            <button onclick="navigateTo('menu-informasi.html')">Menu Informasi</button>
         </div>
         <h1>Berat Badan Ideal Ibu Hamil</h1>
         <div class="input-section">
