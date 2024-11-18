@@ -148,8 +148,23 @@ legend {
 }
 
 .mylist {
-  list-style: none;
-  text-align: justify;
+  padding-left: 7vw; /* Menambahkan padding */
+  padding-right: 2.5vw;
+  list-style: circle;
+  text-wrap: wrap;
+  font-size: 3.3vw;
+  font-family: Arial;
+  line-height: 1.5;
+}
+
+.listnum {
+  padding-left: 7vw; /* Menambahkan padding */
+  padding-right: 2.5vw;
+  text-wrap: wrap;
+  font-size: 3.3vw;
+  font-family: Arial;
+  line-height: 1.5;
+  list-style-type: decimal;
 }
 
 p {
