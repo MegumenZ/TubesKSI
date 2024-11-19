@@ -1,0 +1,3 @@
+[submodule "TubesKSI"]
+  path = TubesKSI
+  url = https://github.com/MegumenZ/TubesKSI
