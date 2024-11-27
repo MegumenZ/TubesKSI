@@ -350,6 +350,10 @@
         menu.setAttribute("aria-hidden", !isActive);
       }
 
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+
       // Close menu when clicking outside
       document.addEventListener("click", function (event) {
         const menu = document.getElementById("dropdownMenu");

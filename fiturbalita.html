@@ -232,9 +232,7 @@
        
         <div class="button-container">
             <button onclick="resetForm()">Ulang</button>
-            <a href="#" id="linkResult">
-                <button onclick="hitungBeratIdeal()">Mulai Hitung</button>
-            </a>
+            <button onclick="hitungBeratIdeal()">Mulai Hitung</button>
         </div>
        
         <div class="result-section" id="resultSection">
@@ -268,38 +266,47 @@
         }
         function hitungBeratIdeal() {
     const beratBadan = parseFloat(document.getElementById("beratSebelum").value);
-    const tinggiBadan = parseFloat(document.getElementById("tinggiBadan").value) / 100; // Konversi ke meter
-    
-   
+    const tinggiBadan = parseFloat(document.getElementById("tinggiBadan").value) / 100; // Convert to meters
+
     if (isNaN(beratBadan) || isNaN(tinggiBadan) || tinggiBadan <= 0) {
         alert("Masukkan berat badan dan tinggi badan yang valid.");
-        return;
+        return; // Prevent further execution
     }
 
-   
     const imt = beratBadan / (tinggiBadan * tinggiBadan);
-    const linkElement = document.getElementById("linkResult");
-    
     let kategori;
+    let targetPage;
+
     if (imt < 18.5) {
-        linkElement.href = "GizigaIdeal.html";
+        kategori = "Kekurangan Berat Badan";
+        targetPage = "GizigaIdeal.html"; // Page for underweight
     } else if (imt >= 18.5 && imt < 22.9) {
-        linkElement.href = "Gizianak.html";
+        kategori = "Berat Badan Normal";
+        targetPage = "Gizianak.html"; // Page for normal weight
     } else if (imt >= 23 && imt < 29.9) {
-        linkElement.href = "GizigaIdeal.html";
-    } 
-        }
+        kategori = "Kelebihan Berat Badan";
+        targetPage = "GizigaIdeal.html"; // Page for overweight
+    } else {
+        kategori = "Obesitas";
+        targetPage = "GizigaIdeal.html"; // Page for obesity
+    }
+
     const resultText = `Indeks Massa Tubuh (IMT) Anda adalah ${imt.toFixed(2)}. Kategori: ${kategori}.`;
     document.getElementById("resultText").innerText = resultText;
     document.getElementById("resultSection").style.display = "block";
 
+    // Navigate to the new page after displaying the result
+    setTimeout(() => {
+        window.location.href = targetPage; // Redirects to the target page
+    }, 2000); // Redirects after 2 seconds
+}
 
 function resetForm() {
     document.getElementById("beratSebelum").value = '';
     document.getElementById("tinggiBadan").value = '';
     document.getElementById("resultSection").style.display = "none";
 }
-
+    
     </script>
 </body>
 </html>
