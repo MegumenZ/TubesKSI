@@ -86,8 +86,8 @@
       }
       h1 {
         text-align: center;
-        padding-top: 120px;
-        padding-bottom: 40px;
+        padding-top: 76px;
+        padding-bottom: 20px;
         font-size: 1.5em;
         color: #333;
       }
@@ -99,7 +99,7 @@
         margin-bottom: 5px;
         color: #333;
       }
-      
+
       .container {
             max-width: 400px;
             width: 95%;
@@ -108,17 +108,15 @@
             padding-top: 80px; 
         }
 
-  
-
-      .input-box {
-        max-width: 400px;
-        width: 100%;
-        padding-top: 35px;
-        position:relative;
-        border-radius: 10px;
-        margin: auto;
-        color: black;
-      }
+        .input-box {
+            max-width: 400px;
+            width: 100%;
+            padding: 15px; /* Menambahkan padding untuk ruang di dalam input */
+            font-size: 1em; /* Atur ukuran font di sini */
+            border-radius: 10px;
+            margin-bottom: 15px;
+            color: black;
+        }
 
       .button-container {
         display: flex;
@@ -211,6 +209,7 @@
       .dropdown-menu button:hover {
         background-color: #9b8dd6;
       }
+
     </style>
   </head>
   <body>
@@ -234,36 +233,34 @@
           />
         </div>
       </header>
+
       <div class="dropdown-menu" id="dropdownMenu" aria-hidden="true">
-        <button onclick="navigateTo('fiturbalita.html')">
-          Cek Gizi Anak
-        </button>
+        <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Anak</button>
         <button onclick="navigateTo('#')">Cek Gizi Ibu Hamil</button>
         <button onclick="navigateTo('index.html')">Menu Beranda</button>
       </div>
+
       <h1>Berat Badan Ideal Ibu Hamil</h1>
       <div class="input-section">
-        <label class="input-label" for="beratSebelum"
-          >Berat Badan Sebelum Hamil (kg)</label
-        >
+        <label class="input-label" for="beratSebelum">Berat Badan Sebelum Hamil (kg)</label>
         <input type="number" id="beratSebelum" class="input-box blue" />
       </div>
+
       <div class="input-section">
-        <label class="input-label" for="beratSaatIni"
-          >Berat Badan Saat Ini (kg)</label
-        >
+        <label class="input-label" for="beratSaatIni">Berat Badan Saat Ini (kg)</label>
         <input type="number" id="beratSaatIni" class="input-box green" />
       </div>
+
       <div class="input-section">
         <label class="input-label" for="tinggiBadan">Tinggi Badan (cm)</label>
         <input type="number" id="tinggiBadan" class="input-box pink" />
       </div>
+
       <div class="input-section">
-        <label class="input-label" for="usiaKehamilan"
-          >Usia Kehamilan (Minggu)</label
-        >
+        <label class="input-label" for="usiaKehamilan">Usia Kehamilan (Minggu)</label>
         <input type="number" id="usiaKehamilan" class="input-box yellow" />
       </div>
+
       <!-- Button Section -->
       <div class="button-container">
         <button onclick="resetForm()">Ulang</button>
@@ -280,7 +277,7 @@
         <div class="tahukah-ibu-overlay">
           <h2 class="tahukah-ibu-title">Tahukah Ibu ?</h2>
           <div class="tahukah-ibu-content">
-            Berikut adalah nutrisi penting yang perlu dipenuhi ibu hamil:
+            Berikut adalah nutrisi penting ibu hamil:
             <ol class="angka">
               <li>Folat dan Asam Folat</li>
               <li>Kalsium</li>
