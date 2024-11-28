@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berat Badan Ideal Ibu Hamil</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Posyandu Kartika</title>
+  <link rel="icon" type="image/x-icon" href="/aset/logo.png">
     <style>
        
         * {
@@ -14,7 +16,7 @@
 
       
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins';
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
@@ -126,18 +128,15 @@
             text-align: center;
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         
         .result-box .overlay {
-            position: absolute;
-            top: 80px;
-            left: 0;
+            display: block;
+            padding: 10px;
             width: 100%;
-            height: 72%;
             background-color: rgba(95, 239, 152, 0.6);
-            border-radius: 60px;
+            border-radius: 8px;
             pointer-events: none;
         }
 
@@ -157,6 +156,7 @@
             font-size: 0.875em;
             color: #555;
             line-height: 1.2;
+            text-align: justify;
         }
 
        
@@ -176,18 +176,15 @@
             margin: 0 20px;
             margin-bottom: 15px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
      
         .info-box .overlay {
-            position: absolute;
-            top: 79px;
-            left: 0;
-            width: 100%;
-            height: 65%;
+            display: block;
+            padding: 10px;
+            width: 100%;;
             background-color: rgba(125, 175, 255, 0.6);
-            border-radius: 60px;
+            border-radius: 8px;
             pointer-events: none;
         }
 
@@ -208,6 +205,7 @@
             color: #555;
             line-height: 1.2;
             margin-bottom: 10px;
+            text-align: justify;
         }
 
         .info-box strong {
@@ -318,34 +316,41 @@
             <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Balita</button>
             <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
             <button onclick="navigateTo('index.html')">Menu Beranda</button>
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdQ2w9qpN7dFgP8aPnucNaV5NUGMPBvJv5kdUUckqDfd0drWg/viewform?fbzx=-6275440320499311762')">Survey Mawas Diri Posyandu Kartika </button>
         </div>
        
         <h1 class="title">Gizi Ideal Anak Balita</h1>
 
         <div class="result-box">
-            <div class="overlay"></div>
             <div class="icon-wrapper">
                 <div class="icon">
                     <img src="aset/iconanak.png" alt="Icon">
                 </div>
             </div>
-            <h2>Hasil Pemeriksaan Berat Badan Anda:</h2>
+            <div class="overlay">
+                <h2>Hasil Pemeriksaan Berat Badan Anda:</h2>
 
             <p>Kami sangat memahami kekhawatiran Anda.</p> <p> <strong>Hasil pemeriksaan menunjukkan bahwa asupan gizi anak Anda Belum Optimal.</strong> </p> <p>Asupan gizi anak sangat berpengaruh pada tumbuh kembangnya. Yuk, pastikan si kecil mendapatkan nutrisi yang cukup setiap hari!</p>
+            </div>
+            
+            
         </div>
         <div class="button-group">
             <button class="btn" onclick="navigateTo('fiturbalita.html')">Ulang</button>
         </div>
 
         <div class="info-box">
-            <div class="overlay"></div>
             <div class="icon-wrapper">
                 <div class="icon">
                     <img src="aset/iconanak.png" alt="Info Icon">
                 </div>
             </div>
-            <h3>Tahukah Ibu?</h3>
-            <p>Sayuran hijau itu seperti superhero: Bayam, brokoli, dan sayuran hijau lainnya adalah superhero bagi balita. Mereka mengandung banyak zat besi yang membantu darah membawa oksigen ke seluruh tubuh.</p>
+            <div class="overlay"><h3>Tahukah Ibu?</h3>
+                <p>Sayuran hijau itu seperti superhero: Bayam, brokoli, dan sayuran hijau lainnya adalah superhero bagi balita. Mereka mengandung banyak zat besi yang membantu darah membawa oksigen ke seluruh tubuh.</p>
+        </div>
+            
+ 
+            
         </div>
     </div>
 
@@ -364,6 +369,9 @@
         function resetPage() {
             location.reload();
         }
+        function openInNewTab(url) {
+        window.open(url, '_blank');
+    }
     </script>
 </body>
 </html>

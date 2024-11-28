@@ -13,9 +13,13 @@
     <div class="atas">
       <div class="atas">
           <header>
-              <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-              <div class="profile-icon">
-                  <img src="aset/logo.png" alt="Profile Icon" style="width: 170%; height: 170%; border-radius: 100%;">
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle menu">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+              <div class="logo-icon">
+                  <img src="aset/logo.png" alt="Logo aplikasi" style="width: 170%; height: 170%;">
               </div>
           </header>
         </div>
@@ -24,7 +28,7 @@
       <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Anak</button>
       <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
       <button onclick="navigateTo('#')">Menu Beranda</button>
-      <button onclick="navigateTo('https://docs.google.com/forms/d/e/1FAIpQLSdQ2w9qpN7dFgP8aPnucNaV5NUGMPBvJv5kdUUckqDfd0drWg/viewform?fbzx=-6275440320499311762')">Survey Mawas Diri Posyandu Kartika </button>
+      <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdQ2w9qpN7dFgP8aPnucNaV5NUGMPBvJv5kdUUckqDfd0drWg/viewform?fbzx=-6275440320499311762')">Survey Mawas Diri Posyandu Kartika </button>
         </div>
   </div>
 </div>
@@ -146,6 +150,20 @@
     items.forEach((item) => {
       item.style.width = `${maxWidth}px`;
     });
+    function openInNewTab(url) {
+        window.open(url, '_blank');
+    }
+    function toggleMenu() {
+            const menu = document.getElementById("dropdownMenu");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            menu.classList.toggle("active");
+            menuIcon.classList.toggle("active");
+
+            const isActive = menu.classList.contains("active");
+            menu.setAttribute("aria-hidden", !isActive);
+        }
+
   </script>
 </body>
 </html>
