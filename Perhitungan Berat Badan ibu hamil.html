@@ -99,13 +99,24 @@
         margin-bottom: 5px;
         color: #333;
       }
+      
+      .container {
+            max-width: 400px;
+            width: 95%;
+            position: relative;
+            margin: auto;
+            padding-top: 80px; 
+        }
+
+  
+
       .input-box {
+        max-width: 400px;
         width: 100%;
-        padding: 15px;
+        padding-top: 35px;
+        position:relative;
         border-radius: 10px;
-        margin-bottom: 15px;
-        text-align: left;
-        font-size: 1em;
+        margin: auto;
         color: black;
       }
 
@@ -203,6 +214,8 @@
     </style>
   </head>
   <body>
+
+  <div class="container">
     <div>
       <!-- Header with Menu Icon and Logo -->
       <header>
@@ -223,7 +236,7 @@
       </header>
       <div class="dropdown-menu" id="dropdownMenu" aria-hidden="true">
         <button onclick="navigateTo('fiturbalita.html')">
-          Cek Gizi Balita
+          Cek Gizi Anak
         </button>
         <button onclick="navigateTo('#')">Cek Gizi Ibu Hamil</button>
         <button onclick="navigateTo('index.html')">Menu Beranda</button>
@@ -280,6 +293,7 @@
         </div>
       </div>
     </div>
+  </div> 
     <script>
       function hitungBeratIdeal() {
         const beratSebelum = parseFloat(
