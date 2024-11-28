@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berat Badan Ideal Ibu Hamil</title>
+    <title>Posyandu Kartika</title>
+  <link rel="icon" type="image/x-icon" href="/aset/logo.png">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <style>
        
         * {
@@ -14,7 +16,7 @@
 
       
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins';
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
@@ -131,13 +133,11 @@
 
         
         .result-box .overlay {
-            position: absolute;
-            top: 80px;
-            left: 0;
+            display: block;
             width: 100%;
-            height: 72%;
+            padding: 10px;
             background-color: rgba(95, 239, 152, 0.6);
-            border-radius: 60px;
+            border-radius: 8px;
             pointer-events: none;
         }
 
@@ -157,6 +157,7 @@
             font-size: 0.875em;
             color: #555;
             line-height: 1.2;
+            text-align: justify;
         }
 
        
@@ -176,18 +177,15 @@
             text-align: center;
             margin-bottom: 20px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
      
         .info-box .overlay {
-            position: absolute;
-            top: 80px;
-            left: 0;
+            display: block;
             width: 100%;
-            height: 72%;
+            padding: 10px;
             background-color: rgba(125, 175, 255, 0.6);
-            border-radius: 60px;
+            border-radius: 8px;
             pointer-events: none;
         }
 
@@ -208,6 +206,7 @@
             color: #555;
             line-height: 1.2;
             margin-bottom: 10px;
+            text-align: justify;
         }
 
         .info-box strong {
@@ -318,36 +317,40 @@
             <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Balita</button>
             <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
             <button onclick="navigateTo('index.html')">Menu Beranda</button>
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdQ2w9qpN7dFgP8aPnucNaV5NUGMPBvJv5kdUUckqDfd0drWg/viewform?fbzx=-6275440320499311762')">Survey Mawas Diri Posyandu Kartika </button>
         </div>
 
         <h1 class="title">Berat Badan Ideal Ibu Hamil</h1>
 
         <div class="result-box">
-            <div class="overlay"></div>
             <div class="icon-wrapper">
                 <div class="icon">
                     <img src="aset/ibu ijo 2.png" alt="Icon">
                 </div>
             </div>
-            <h2>Hasil Pemeriksaan Berat Badan Anda:</h2>
-            <p>Hasil perhitungan menunjukkan bahwa berat badan Anda saat ini perlu disesuaikan agar kehamilan lebih sehat. Jangan khawatir, Anda masih bisa melakukan banyak hal untuk mencapai berat badan ideal. Mari Atur Ulang Pola Makan Anda untuk Kehamilan yang Sehat</p>
+            <div class="overlay"><h2>Hasil Pemeriksaan Berat Badan Anda:</h2>
+                <p>Hasil perhitungan menunjukkan bahwa berat badan Anda saat ini perlu disesuaikan agar kehamilan lebih sehat. Jangan khawatir, Anda masih bisa melakukan banyak hal untuk mencapai berat badan ideal.</p>
+                <p>Mari Atur Ulang Pola Makan Anda untuk Kehamilan yang Sehat</p></div>
+            
+            
         </div>
 
         <div class="button-group">
-            <button class="btn" onclick="resetPage()">Ulang</button>
+            <button class="btn" onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Ulang</button>
         </div>
 
         <div class="info-box">
-            <div class="overlay"></div>
             <div class="icon-wrapper">
                 <div class="icon">
                     <img src="aset/ibu pink love 1.png" alt="Info Icon">
                 </div>
             </div>
-            <h3>Tahukah Ibu?</h3>
-            <p><strong>Makan makanan bergizi:</strong> Prioritaskan makanan yang kaya akan protein, serat, vitamin, dan mineral.</p>
-            <p><strong>Batasi makanan olahan:</strong> Kurangi konsumsi makanan olahan yang tinggi gula, garam, dan lemak jenuh.</p>
-            <p><strong>Minum air putih yang cukup:</strong> Air membantu menjaga tubuh tetap terhidrasi dan melancarkan pencernaan.</p>
+            <div class="overlay"><h3>Tahukah Ibu?</h3>
+                <p><strong>Makan makanan bergizi:</strong> Prioritaskan makanan yang kaya akan protein, serat, vitamin, dan mineral.</p>
+                <p><strong>Batasi makanan olahan:</strong> Kurangi konsumsi makanan olahan yang tinggi gula, garam, dan lemak jenuh.</p>
+                <p><strong>Minum air putih yang cukup:</strong> Air membantu menjaga tubuh tetap terhidrasi dan melancarkan pencernaan.</p></div>
+            
+            
         </div>
     </div>
 
@@ -366,6 +369,9 @@
         function resetPage() {
             location.reload();
         }
+        function openInNewTab(url) {
+        window.open(url, '_blank');
+    }
     </script>
 </body>
 </html>
