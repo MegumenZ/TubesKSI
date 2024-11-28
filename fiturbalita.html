@@ -71,41 +71,41 @@
 
         
         .dropdown-menu {
-            position: fixed;
-            top: 60px;
-            left: -100%;
-            width: 40%;
-            max-width: 300px;
-            height: 100%;
-            background-color: #d3c7ff;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            transition: left 0.3s ease;
-            z-index: 999;
-        }
-        .dropdown-menu.active {
-            left: 0;
-        }
-        .dropdown-menu button {
-            background-color: #b3a7e6;
-            border: none;
-            padding: 10px;
-            font-size: 14px;
-            color: #333;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            max-width: 200px;
-            transition: background-color 0.3s;
-        }
-        .dropdown-menu button:hover {
-            background-color: #9b8dd6;
-        }
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100%;
+        background-color: #d3c7ff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        transition: left 0.3s ease;
+        z-index: 999;
+      }
+      .dropdown-menu.active {
+        left: 0;
+      }
+      .dropdown-menu button {
+        background-color: #b3a7e6;
+        border: none;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        max-width: 200px;
+        transition: background-color 0.3s;
+      }
+      .dropdown-menu button:hover {
+        background-color: #9b8dd6;
+      }
         
         h1 {
             font-size: 1.5em;
@@ -202,12 +202,12 @@
             </header>
         
         <div class="dropdown-menu" id="dropdownMenu">
-            <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Balita</button>
+            <button onclick="navigateTo('fiturbalita.html')">Cek Gizi Anak</button>
             <button onclick="navigateTo('Perhitungan Berat Badan ibu hamil.html')">Cek Gizi Ibu Hamil</button>
             <button onclick="navigateTo('index.html')">Menu Beranda</button>
         </div>
         
-        <h1>Gizi Ideal Anak Balita</h1>
+        <h1>Gizi Ideal Anak</h1>
         <div class="input-section">
             <label class="input-label" for="jenisKelamin">Jenis Kelamin</label>
             <select id="jenisKelamin" class="input-box yellow">
@@ -242,7 +242,7 @@
         <div class="tahukah-ibu-section">
             <h2 class="tahukah-ibu-title">Tahukah Ibu?</h2>
             <div class="tahukah-ibu-content">
-                Berikut adalah nutrisi penting yang perlu dipenuhi ibu hamil:
+                Berikut adalah nutrisi penting Ibu Hamil:
                 <ol class="angka">
                     <li>Folat dan Asam Folat</li>
                     <li>Kalsium</li>
