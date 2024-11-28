@@ -86,8 +86,8 @@
       }
       h1 {
         text-align: center;
-        padding-top: 120px;
-        padding-bottom: 40px;
+        padding-top: 76px;
+        padding-bottom: 20px;
         font-size: 1.5em;
         color: #333;
       }
@@ -108,17 +108,15 @@
             padding-top: 80px; 
         }
 
-  
-
-      .input-box {
-        max-width: 400px;
-        width: 100%;
-        padding-top: 35px;
-        position:relative;
-        border-radius: 10px;
-        margin: auto;
-        color: black;
-      }
+        .input-box {
+            max-width: 400px;
+            width: 100%;
+            padding: 15px; /* Menambahkan padding untuk ruang di dalam input */
+            font-size: 1em; /* Atur ukuran font di sini */
+            border-radius: 10px;
+            margin-bottom: 15px;
+            color: black;
+        }
 
       .button-container {
         display: flex;
@@ -211,6 +209,7 @@
       .dropdown-menu button:hover {
         background-color: #9b8dd6;
       }
+
     </style>
   </head>
   <body>
@@ -261,7 +260,7 @@
         <label class="input-label" for="usiaKehamilan">Usia Kehamilan (Minggu)</label>
         <input type="number" id="usiaKehamilan" class="input-box yellow" />
       </div>
-      
+
       <!-- Button Section -->
       <div class="button-container">
         <button onclick="resetForm()">Ulang</button>
