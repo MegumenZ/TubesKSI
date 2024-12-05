@@ -193,6 +193,12 @@ p {
   text-align: justify;
 }
 
+h1 {
+  font-size: 4vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: -5vh;
+}
+
 .container {
   position: relative;
   overflow: hidden;
