@@ -132,7 +132,7 @@ header {
   padding: 16px; /* Padding around the content */
   width: 100%; /* Ensure the container takes full width */
   box-sizing: border-box; /* Include padding in width calculation */
-  margin:20px 0;
+  margin: 20px 0;
 }
 .horizontal-scroll-item {
   flex: 0 0 calc(100% - 32px); /* Prevent items from shrinking or growing, keep fixed width */
@@ -223,12 +223,6 @@ p {
   padding-left: 2%;
   padding-right: 2%;
   text-align: justify;
-}
-
-h1 {
-  font-size: 4vw;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: -5vh;
 }
 
 .container {
