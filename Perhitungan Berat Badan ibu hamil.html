@@ -48,7 +48,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-         Copy Ini
+         
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
@@ -71,7 +71,7 @@
             object-fit: cover;
         }
 
-        /* Copy Ini */
+   
         .menu-icon {
             width: 24px;
             height: 24px;
@@ -227,7 +227,6 @@
     
         <div class="container">
             <header>
-              <!-- Copy Ini -->
               <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle menu">
                 <div></div>
                 <div></div>
@@ -266,11 +265,14 @@
         
        
         <div class="button-container">
-        <button onclick="resetForm()">Ulang</button>
-        <a href="#" id="linkResult">
-          <button onclick="hitungBeratIdeal()">Mulai Hitung</button>
-        </a>
-      </div>
+            <button onclick="resetForm()">Ulang</button>
+            <button onclick="hitungBeratIdeal()">Mulai Hitung</button>
+        </div>
+
+      
+        <div class="result-section" id="resultSection">
+            <p id="resultText"></p>
+        </div>
     
         <div class="tahukah-ibu-section">
             <h2 class="tahukah-ibu-title">Tahukah Ibu?</h2>
@@ -288,95 +290,100 @@
         </div>
     </div>
     <script>
-      function toggleMenu() {
-  const menu = document.getElementById("dropdownMenu");
-  const menuIcon = document.querySelector(".menu-icon");
-
-  menu.classList.toggle("active");
-  menuIcon.classList.toggle("active");
-
-  const isActive = menu.classList.contains("active");
-  menu.setAttribute("aria-hidden", !isActive);
-}
-
-      function hitungBeratIdeal() {
-        const beratSebelum = parseFloat(
-          document.getElementById("beratSebelum").value
-        );
-        const beratSaatIni = parseFloat(
-          document.getElementById("beratSaatIni").value
-        );
-        const tinggiBadan = parseFloat(
-          document.getElementById("tinggiBadan").value
-        );
-        const usiaKehamilan = parseInt(
-          document.getElementById("usiaKehamilan").value
-        );
-
-        if (
-          isNaN(beratSebelum) ||
-          isNaN(beratSaatIni) ||
-          isNaN(tinggiBadan) ||
-          isNaN(usiaKehamilan)
-        ) {
-          alert("Silakan masukkan semua data dengan benar.");
-          return;
+        function openInNewTab(url) {
+        window.open(url, '_blank');
+    }
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const isActive = dropdownMenu.classList.contains('active');
+            dropdownMenu.classList.toggle('active', !isActive);
+            dropdownMenu.setAttribute('aria-hidden', isActive);
+        }
+        function navigateTo(page) {
+            window.location.href = page;
         }
 
-        // Menghitung Berat Badan Ideal Sebelum Hamil (BBI)
+        function hitungBeratIdeal() {
+        console.log("Fungsi hitungBeratIdeal dipanggil"); // Debugging untuk mengecek jika fungsi dipanggil
+        const beratSebelum = parseFloat(document.getElementById("beratSebelum").value);
+        const beratSaatIni = parseFloat(document.getElementById("beratSaatIni").value);
+        const tinggiBadan = parseFloat(document.getElementById("tinggiBadan").value);
+        const usiaKehamilan = parseInt(document.getElementById("usiaKehamilan").value);
+
+        // Pastikan semua input valid
+        if (isNaN(beratSebelum) || isNaN(beratSaatIni) || isNaN(tinggiBadan) || isNaN(usiaKehamilan) || 
+            beratSebelum <= 0 || beratSaatIni <= 0 || tinggiBadan <= 0 || usiaKehamilan <= 0) {
+            alert("Masukkan semua data dengan benar (angka harus lebih dari 0).");
+            return;
+        }
+
+        // Menghitung IMT sebelum hamil
+        const tinggiMeter = tinggiBadan / 100;
+        const IMT = beratSebelum / (tinggiMeter ** 2);
+        
+        // Menghitung BBI (Berat Badan Ideal Sebelum Hamil)
         const BBI = tinggiBadan - 100 - (tinggiBadan - 100) * 0.1;
+        
+        // Menentukan kenaikan berat badan berdasarkan IMT
+        let kenaikanBerat;
+        if (IMT < 18.5) {
+            kenaikanBerat = 15; // Rata-rata untuk IMT kurang
+        } else if (IMT >= 18.5 && IMT <= 24.9) {
+            kenaikanBerat = 13; // Rata-rata untuk IMT normal
+        } else {
+            kenaikanBerat = 9;  // Rata-rata untuk IMT berlebih
+        }
 
-        // Menghitung Berat Badan Ideal Saat Hamil (BBIH)
-        const BBIH = BBI + usiaKehamilan * 0.35;
-        const linkElement = document.getElementById("linkResult");
+        // Menghitung BBIH (Berat Badan Ideal Saat Hamil)
+        const BBIH = BBI + kenaikanBerat;
 
-        // Menampilkan hasil
+        // Menentukan status berat badan
         let statusBeratBadan;
         if (beratSaatIni < BBIH) {
-          linkElement.href = "ibunonideal.html";
+            statusBeratBadan = "Berat badan di bawah ideal.";
         } else if (beratSaatIni > BBIH) {
-          linkElement.href = "ibunonideal.html";
+            statusBeratBadan = "Berat badan di atas ideal.";
         } else {
-          linkElement.href = "ibuideal.html";
+            statusBeratBadan = "Berat badan ideal.";
         }
 
-        const resultText = `Berat Badan Ideal Sebelum Hamil (BBI): ${BBI.toFixed(
-          2
-        )} kg<br>
-                                Berat Badan Ideal Saat Hamil (BBIH): ${BBIH.toFixed(
-                                  2
-                                )} kg<br>
-                                Berat Badan Saat Ini: ${beratSaatIni} kg<br>
-                                ${statusBeratBadan}`;
+        // Menampilkan hasil
+        const resultText = `
+        <p><strong>Hasil Perhitungan:</strong></p>
+        <p>IMT Sebelum Hamil: ${IMT.toFixed(2)}</p>
+        <p>Berat Badan Ideal Sebelum Hamil: ${BBI.toFixed(2)} kg</p>
+        <p>Kenaikan Berat Badan yang Dianjurkan: ${kenaikanBerat} kg</p>
+        <p>Berat Badan Ideal Saat Hamil (BBIH): ${BBIH.toFixed(2)} kg</p>
+        <p>Status Berat Badan: <strong>${statusBeratBadan}</strong></p>`;
+        
         document.getElementById("resultText").innerHTML = resultText;
-        document.getElementById("resultSection").style.display = "block";
-      }
+        document.getElementById("resultSection").style.display = "block"; // Menampilkan hasil
 
-      function resetForm() {
+        // Mengalihkan halaman setelah 8 detik
+        setTimeout(() => {
+            if (statusBeratBadan === "Berat badan di bawah ideal.") {
+                window.location.href = "ibunonideal.html"; // Alamat tujuan jika berat badan di bawah ideal
+            } else if (statusBeratBadan === "Berat badan di atas ideal.") {
+                window.location.href = "ibunonideal.html"; // Alamat tujuan jika berat badan di atas ideal
+            } else {
+                window.location.href = "ibuideal.html"; // Alamat tujuan jika berat badan ideal
+            }
+        }, 8000); // Pengalihan setelah 5 detik
+    }
+
+    function resetForm() {
         document.getElementById("beratSebelum").value = "";
         document.getElementById("beratSaatIni").value = "";
         document.getElementById("tinggiBadan").value = "";
         document.getElementById("usiaKehamilan").value = "";
-        document.getElementById("resultSection").style.display = "none";
-      }
+        document.getElementById("resultSection").style.display = "none"; // Sembunyikan hasil
+    }
 
-      // Copy Ini
-      function toggleMenu() {
-            const menu = document.getElementById("dropdownMenu");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            menu.classList.toggle("active");
-            menuIcon.classList.toggle("active");
-
-            const isActive = menu.classList.contains("active");
-            menu.setAttribute("aria-hidden", !isActive);
-        }
 
         function navigateTo(page) {
             window.location.href = page;
         }
 
-        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             const menu = document.getElementById("dropdownMenu");
             const menuIcon = document.querySelector(".menu-icon");
@@ -388,9 +395,10 @@
                 }
             }
         });
+
         function openInNewTab(url) {
-        window.open(url, '_blank');
-    }
+            window.open(url, '_blank');
+        }
     </script>
-  </body>
+</body>
 </html>
