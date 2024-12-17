@@ -3,23 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posyandu Kartika</title>
-    <link rel="icon" type="image/x-icon" href="/aset/logo.png" />
+    <title>LOGO POSYANDU</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalita+One&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
+      * {
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         background-color: #fff;
-        margin: 0;
+        font-family: "Lalita One", sans-serif;
+      }
+
+      .container {
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
       }
 
       .logo {
-        width: 200px; /* Adjust the size of the logo */
-        height: auto;
+        width: 180px;
+        height: 180px;
+        background-image: url("aset/logo.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        animation: bounceVertical 2s ease-in-out infinite;
+      }
+
+      .text {
+        margin-top: 0px;
+        font-size: 17px;
+        font-family: "Lalita One", regular;
+        font-weight: bold;
+        color: #4b0082;
         opacity: 0;
-        animation: fadeIn 2s forwards; /* Fade-in animation */
+        animation: fadeInText 2s ease forwards 2s;
       }
 
       @keyframes fadeIn {
@@ -30,16 +59,50 @@
           opacity: 1;
         }
       }
+
+      @keyframes fadeInText {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounceVertical {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .logo {
+          width: 150px;
+          height: 150px;
+        }
+
+        .text {
+          font-size: 18px;
+        }
+      }
     </style>
   </head>
   <body>
-    <img src="aset/logo.png" alt="Logo" class="logo" />
+    <div class="container">
+      <div class="logo"></div>
+      <div class="text">POSYANDU KARTIKA</div>
+      <div class="text">SABAH BALAU</div>
+    </div>
 
     <script>
-      // Redirect to beranda.html after 3 seconds
+      // Redirect to beranda.html after 5 seconds
       setTimeout(() => {
         window.location.href = "beranda.html";
-      }, 3000); // Change the time as needed
+      }, 5000); // Change the time as needed
     </script>
   </body>
 </html>
