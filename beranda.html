@@ -150,6 +150,30 @@
       font-weight: 600;
       margin-left: 5px;
     }
+div {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: 1rem; 
+      justify-content: center; 
+    }
+
+    div > .bg-purple-200 {
+      flex: 1 1 calc(100% - 2rem); 
+      max-width: 600px; 
+      min-width: 300px; 
+      word-wrap: break-word; 
+      box-sizing: border-box;
+      margin-bottom: 1rem; 
+    }
+
+    img {
+      max-width: 100%; 
+      height: auto; 
+    }
+
+    fieldset {
+      width: 100%; 
+    }
 
     footer {
       background-color: rgb(105, 3, 145);
@@ -277,68 +301,106 @@
   
   
  
-  <div class="w-full overflow-x-auto flex space-x-4 p-4 rounded shadow-md mt-4">
+  <div class="w-full flex flex-wrap gap-4 p-4 rounded shadow-md mt-4">
     <!-- Item 1 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Sejarah Desa</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Sejarah Desa
+        </legend>
         <img src="aset/Sejarah Desa.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Sejarah telah mencatat bahwa Pulau Lombok...</p>
-        <a href="https://medium.com/@posyandukartikasabahbalau/sejarah-desa-sabah-balau-1b21b03becc0" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Sejarah telah mencatat bahwa Pulau Lombok adalah tempat lahirnya berbagai tradisi dan budaya unik yang diwariskan dari generasi ke generasi. Perkembangan zaman tetap menghormati...
+        </p>
+        <a href="https://medium.com/@posyandukartikasabahbalau/sejarah-desa-sabah-balau-1b21b03becc0" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
 
     <!-- Item 2 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Posyandu Kartika</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Posyandu Kartika
+        </legend>
         <img src="aset/Posyandu Kartika.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Posyandu Kartika adalah salah satu Pos Pelayanan Terpadu...</p>
-        <a href="https://medium.com/@posyandukartikasabahbalau/posyandu-kartika-b7acf41da884" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Posyandu Kartika adalah salah satu Pos Pelayanan Terpadu di Desa Sabah Balau yang menyediakan berbagai layanan kesehatan untuk ibu dan anak. Program ini bertujuan untuk...
+        </p>
+        <a href="https://medium.com/@posyandukartikasabahbalau/posyandu-kartika-b7acf41da884" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
 
     <!-- Item 3 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Bahanya Stunting</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Bahanya Stunting
+        </legend>
         <img src="aset/Program Kesehatan.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Program kesehatan di Posyandu mencakup vaksinasi dan edukasi gizi...</p>
-        <a href="https://medium.com/@posyandu2kartika/slogan-posyandu-4ab9ca2f35dd" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Program kesehatan di Posyandu mencakup vaksinasi dan edukasi gizi yang bertujuan untuk mencegah stunting pada balita. Edukasi ini penting agar keluarga memahami kebutuhan nutrisi yang...
+        </p>
+        <a href="https://medium.com/@posyandu2kartika/slogan-posyandu-4ab9ca2f35dd" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
 
     <!-- Item 4 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Sabah Balau Zero Stunting</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Sabah Balau Zero Stunting
+        </legend>
         <img src="aset/Kegiatan Posyandu.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Desa Sabah Balau berhasil mencapai status “zero stunting” melalui serangkaian upaya terpadu yang melibatkan berbagai program dan partisipasi aktif masyarakat. Berikut adalah faktor-faktor kunci yang berkontribusi pada pencapaian tersebut: </p>
-        <a href="https://medium.com/@posyandukartikasabahbalau/sabah-balau-zero-stunting-28f052016ab5" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Desa Sabah Balau berhasil mencapai status “zero stunting” melalui serangkaian upaya terpadu
+          yang melibatkan berbagai program dan partisipasi aktif masyarakat.
+        </p>
+        <a href="https://medium.com/@posyandukartikasabahbalau/sabah-balau-zero-stunting-28f052016ab5" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
 
     <!-- Item 5 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Makanan Bergizi Untuk Anak</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Makanan Bergizi Untuk Anak
+        </legend>
         <img src="aset/Manfaat Posyandu.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Posyandu memberikan manfaat besar bagi masyarakat...</p>
-        <a href="https://medium.com/@posyandu2kartika/makanan-bergizi-balita-c72675ce3d10" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Posyandu memberikan manfaat besar bagi masyarakat dengan menyediakan makanan bergizi untuk anak-anak...
+        </p>
+        <a href="https://medium.com/@posyandu2kartika/makanan-bergizi-balita-c72675ce3d10" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
 
     <!-- Item 6 -->
-    <div class="w-[300px] h-[385px] bg-purple-200 p-4 rounded shadow-md flex-shrink-0">
-      <fieldset class="h-full flex flex-col justify-between">
-        <legend>Makanan Bergizi Ibu Hamil</legend>
+    <div class="bg-purple-200 p-4 rounded shadow-md">
+      <fieldset class="flex flex-col justify-between">
+        <legend class="text-ellipsis overflow-hidden whitespace-nowrap">
+          Makanan Bergizi Ibu Hamil
+        </legend>
         <img src="aset/Tips Sehat.jpg" class="w-full h-40 object-cover mb-1 rounded">
-        <p>Tips untuk menjaga kesehatan ibu dan anak di rumah...</p>
-        <a href="https://medium.com/@posyandu2kartika/makanan-bergizi-ibu-hamil-06dd71b39f3e" target="_blank" class="text-blue-500 hover:underline mt-2">Selengkapnya</a>
+        <p class="text-sm">
+          Tips untuk menjaga kesehatan ibu dan anak di rumah, termasuk menyediakan makanan bergizi untuk ibu hamil...
+        </p>
+        <a href="https://medium.com/@posyandu2kartika/makanan-bergizi-ibu-hamil-06dd71b39f3e" target="_blank" class="text-blue-500 hover:underline mt-2">
+          Selengkapnya
+        </a>
       </fieldset>
     </div>
-</div>
-  
+  </div>
+</body>
+
   
   <footer class="footer">
     <div class="row">
